@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/ui/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -59,34 +60,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class IconAndDetail extends StatelessWidget {
-  // We don't use key for class that not dependent
-  //    mean export to HomePage class
-  // const IconAndDetail({Key? key}) : super(key: key);
 
-  // Class Attribute
-  final IconData icon;
-  final String detail;
-  const IconAndDetail(this.icon, this.detail);
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          // children is subset of child
-          children: [
-            // Add Icon component
-            Icon(icon),
-            const SizedBox(width: 8),
-            // Add text component
-            Text(
-              detail,
-              style: const TextStyle(fontSize: 18),
-            ),
-          ],
-        ),
-      );
-}
 
 class ApplicationState extends ChangeNotifier {
   ApplicationState() {
