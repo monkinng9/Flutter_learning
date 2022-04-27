@@ -54,13 +54,20 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 8),
           // Import specific Widget
           const IconAndDetail(Icons.calendar_today, 'October 30'),
+          const IconAndDetail(Icons.location_city, 'San Francisco'),
+          //  The Consumer widget the usual way that
+          //    the provider package can be used to rebuild part of the tree
+          //    when the application state changes.
+          Consumer<ApplicationState>(
+            builder: (context, appState, _) => Authentication(
+              email: appState.email,
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
 
 class ApplicationState extends ChangeNotifier {
   ApplicationState() {
