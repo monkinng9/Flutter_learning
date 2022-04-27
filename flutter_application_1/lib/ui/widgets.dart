@@ -28,3 +28,32 @@ class IconAndDetail extends StatelessWidget {
         ),
       );
 }
+
+class StyledButton extends StatelessWidget {
+  const StyledButton({required this.child, required this.onPressed});
+  final Widget child;
+  final void Function() onPressed;
+
+  Widget build(BuildContext context) => OutlinedButton(
+        style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: Colors.deepPurple)),
+        onPressed: onPressed,
+        child: child,
+      );
+}
+
+class Header extends StatelessWidget {
+  const Header(this.heading);
+  final String heading;
+  // @override
+  // Widget build(BuildContext context) don't use
+  // Use expression when it's component
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          heading,
+          style: const TextStyle(fontSize: 24),
+        ),
+      );
+}
