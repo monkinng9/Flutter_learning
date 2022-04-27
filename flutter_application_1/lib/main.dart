@@ -1,84 +1,36 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import 'package:provider/provider.dart';
+
+import 'firebase_options.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: (context, _) => App(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-
-    return const MaterialApp(
-        title: 'Welcome to Flutter',
-        home: RandomWords()
+    return MaterialApp(
+      title: 'Firebase Meetup',
+      theme: ThemeData(),
     );
   }
 }
 
-class RandomWords extends StatefulWidget {
-  const RandomWords({Key? key}) : super(key: key);
-
-  @override
-  State<RandomWords> createState() => _RandomWordsState();
-}
-
-class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _saved = <WordPair>{};
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Startup Name Generator'),
-          actions: [
-            IconButton(
-              onPressed: _pushSaved,
-              icon: const Icon(Icons.list),
-              tooltip: 'Saved Suggestions',
-            )
-          ],
-        ),
-        body: ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemBuilder: (context, i) {
-              if (i.isOdd) return const Divider();
-
-              final index = i ~/ 2;
-              if (index >= _suggestions.length) {
-                _suggestions.addAll(generateWordPairs().take(10));
-              }
-              final alreadySaved = _saved.contains(_suggestions[index]);
-
-              return ListTile(
-                  title: Text(
-                    _suggestions[index].asPascalCase,
-                    style: _biggerFont,
-                  ),
-                  trailing: Icon(
-                    alreadySaved ? Icons.favorite : Icons.favorite_border,
-                    color: alreadySaved ? Colors.red : null,
-                    semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
-                  ),
-                  onTap: () {
-                    setState(() {
-                      if (alreadySaved) {
-                        _saved.remove(_suggestions[index]);
-                      } else {
-                        _saved.add(_suggestions[index]);
-                      }
-                    });
-                  }
-              );
-            }));
+class ApplicationState extends ChangeNotifier {
+  ApplicationState() {
+    init();
   }
 
-  void _pushSaved() {
-
+  Future<void> init() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 }
