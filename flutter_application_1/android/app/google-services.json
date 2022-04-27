@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "55893101104",
+    "project_id": "pill-identifier-57849",
+    "storage_bucket": "pill-identifier-57849.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55893101104:android:b5b977203fd3a685b8bbf5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYNxVxnJUBJvZ6NohRfrltXfNnkZS_NqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55893101104-a5s8o29b4spfa4g6o8pnd83on28li8ck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pillIdentifier"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55893101104:android:233da2c35eb17a94b8bbf5",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYNxVxnJUBJvZ6NohRfrltXfNnkZS_NqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55893101104-a5s8o29b4spfa4g6o8pnd83on28li8ck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pillIdentifier"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55893101104:android:64596830abd233d8b8bbf5",
+        "android_client_info": {
+          "package_name": "com.example.pill_identifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55893101104-l2s2ckivs9vkad216itvqvths500jsos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pill_identifier",
+            "certificate_hash": "65c6165a60bc8bfbb206cbd10d7c4cb9df28097d"
+          }
+        },
+        {
+          "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYNxVxnJUBJvZ6NohRfrltXfNnkZS_NqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55893101104-850tjhcgu0g5rb38ldpgql16lcvo7v6a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55893101104-a5s8o29b4spfa4g6o8pnd83on28li8ck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pillIdentifier"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
