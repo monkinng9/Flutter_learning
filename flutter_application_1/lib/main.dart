@@ -46,6 +46,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Firebase Meetup'),
       ),
+      body: ListView(
+        children: <Widget>[
+          // Import Image
+          Image.asset('assets/codelab.png'),
+          // const SizedBox(height: 8),
+          // const IconAndDetail(Icons.calendar_today, 'October 30'),
+        ],
+      ),
     );
   }
 }
