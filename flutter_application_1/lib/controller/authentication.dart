@@ -14,6 +14,9 @@ class Authentication extends StatelessWidget {
     required this.email,
     required this.verifyEmail,
     required this.signInWithEmailAndPassword,
+    required this.cancleRegistration,
+    required this.registerAccount,
+    required this.signOut,
   });
 
   // Class attribute -- Email&Password
@@ -31,6 +34,22 @@ class Authentication extends StatelessWidget {
     String password,
     void Function(Exception e) error,
   ) signInWithEmailAndPassword;
+
+  // Cancle Registation Abstract method
+  final void Function() cancleRegistration;
+
+  // Registation Abstract method
+  /// require
+  /// - email, displayName, password
+  final void Function(
+    String email,
+    String displayName,
+    String password,
+    void Function(Exception e) error,
+  ) registerAccount;
+
+  // Signout Abstract method
+  final void Function() signOut;
 
   @override
   Widget build(BuildContext context) {
