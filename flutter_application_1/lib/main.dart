@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
         title: 'Welcome to Flutter',
-        home: Scaffold(body: Center(child: RandomWords())));
+        home: RandomWords()
+    );
   }
 }
 
@@ -35,6 +36,13 @@ class _RandomWordsState extends State<RandomWords> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Startup Name Generator'),
+          actions: [
+            IconButton(
+              onPressed: _pushSaved,
+              icon: const Icon(Icons.list),
+              tooltip: 'Saved Suggestions',
+            )
+          ],
         ),
         body: ListView.builder(
             padding: const EdgeInsets.all(16.0),
@@ -68,5 +76,9 @@ class _RandomWordsState extends State<RandomWords> {
                   }
               );
             }));
+  }
+
+  void _pushSaved() {
+
   }
 }
