@@ -16,7 +16,9 @@ class Authentication extends StatelessWidget {
     required this.signInWithEmailAndPassword,
     required this.cancleRegistration,
     required this.registerAccount,
-    required this.signOut,
+    required this.signOut, 
+    required this.startLoginFlow, 
+    required this.loginState,
   });
 
   // Class attribute -- Email&Password
@@ -48,8 +50,15 @@ class Authentication extends StatelessWidget {
     void Function(Exception e) error,
   ) registerAccount;
 
+  // Start Login Abstract method
+  final void Function() startLoginFlow;
+
   // Signout Abstract method
   final void Function() signOut;
+
+  // Login State attribute
+  /// final - <enum> - <Enum's attribute>
+  final ApplicationLoginstate loginState;
 
   @override
   Widget build(BuildContext context) {
