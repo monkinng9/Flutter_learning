@@ -50,12 +50,42 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           // Import Image
           Image.asset('assets/codelab.png'),
-          // const SizedBox(height: 8),
-          // const IconAndDetail(Icons.calendar_today, 'October 30'),
+          const SizedBox(height: 8),
+          // Import specific Widget
+          const IconAndDetail(Icons.calendar_today, 'October 30'),
         ],
       ),
     );
   }
+}
+
+class IconAndDetail extends StatelessWidget {
+  // We don't use key for class that not dependent
+  //    mean export to HomePage class
+  // const IconAndDetail({Key? key}) : super(key: key);
+
+  // Class Attribute
+  final IconData icon;
+  final String detail;
+  const IconAndDetail(this.icon, this.detail);
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          // children is subset of child
+          children: [
+            // Add Icon component
+            Icon(icon),
+            const SizedBox(width: 8),
+            // Add text component
+            Text(
+              detail,
+              style: const TextStyle(fontSize: 18),
+            ),
+          ],
+        ),
+      );
 }
 
 class ApplicationState extends ChangeNotifier {
