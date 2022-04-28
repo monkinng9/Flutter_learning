@@ -88,7 +88,7 @@ class ApplicationState extends ChangeNotifier {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-
+    // Check who login or none
     FirebaseAuth.instance.userChanges().listen((user) {
       if (user != null) {
         _loginState = ApplicationLoginState.loggedIn;
@@ -106,7 +106,7 @@ class ApplicationState extends ChangeNotifier {
 
   void startLoginFlow() {
     _loginState = ApplicationLoginState.emailAddress;
-    // Method from Flutter
+    // Method from provider package
     notifyListeners();
   }
 
