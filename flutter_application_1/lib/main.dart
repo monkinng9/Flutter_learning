@@ -26,7 +26,6 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Firebase Meetup',
-      // Theme app setup but show in Homepage class
       theme: ThemeData(
         buttonTheme: Theme.of(context).buttonTheme.copyWith(
               highlightColor: Colors.deepPurple,
@@ -124,6 +123,7 @@ class ApplicationState extends ChangeNotifier {
       } else {
         _loginState = ApplicationLoginState.loggedOut;
       }
+      notifyListeners();
     });
   }
 
@@ -164,8 +164,10 @@ class ApplicationState extends ChangeNotifier {
     void Function(FirebaseAuthException e) errorCallback,
   ) async {
     try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
     }
@@ -216,7 +218,7 @@ class GuestBook extends StatefulWidget {
   final FutureOr<void> Function(String message) addMessage;
 
   @override
-  State<GuestBook> createState() => _GuestBookState();
+  _GuestBookState createState() => _GuestBookState();
 }
 
 class _GuestBookState extends State<GuestBook> {
@@ -239,7 +241,7 @@ class _GuestBookState extends State<GuestBook> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Enter your massage to continue';
+                    return 'Enter your message to continue';
                   }
                   return null;
                 },
