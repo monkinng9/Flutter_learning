@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_application_1/controller/authentication.dart';
 import 'package:flutter_application_1/ui/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -35,4 +36,4 @@ class App extends StatelessWidget {
   }
 }
 
-class ApplicationState extends ChangeNotifier {}
+
